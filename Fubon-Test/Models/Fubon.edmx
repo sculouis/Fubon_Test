@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WECHATDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SaleOrder">
+          <Key>
+            <PropertyRef Name="OrderNo" />
+          </Key>
+          <Property Name="OrderNo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="OrderState" Type="smallint" Nullable="false" />
+          <Property Name="ResultCode" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="StoreId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="StoreRefNo" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="PayerId" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SchemeId" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="PayerRefNo" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="BuyerId" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="BuyerName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="CustomerPhoneNo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CustomerPhoneNo2" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CustomerEmail" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="OrderTime" Type="datetime" Nullable="false" />
+          <Property Name="OrderName" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="OrderDesc" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="ShipFree" Type="bit" Nullable="false" />
+          <Property Name="CustomerShipFee" Type="int" Nullable="false" />
+          <Property Name="SellerShipFee" Type="int" Nullable="false" />
+          <Property Name="SellerCurrency" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="SellerAmount" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="TotalAmount" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="ExchangeRisk" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="SBRate" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="BaseAmount" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="PayerCurrency" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="BPRate" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="PayerAmount" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="PaymentTime" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="SettleTime" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="ShipState" Type="smallint" Nullable="false" />
+          <Property Name="ExpressId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ShipNo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ShipKind" Type="smallint" Nullable="false" />
+          <Property Name="ReceiveTime1" Type="bit" Nullable="false" />
+          <Property Name="ReceiveTime2" Type="bit" Nullable="false" />
+          <Property Name="ReceiveTime3" Type="bit" Nullable="false" />
+          <Property Name="AreaCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ShipAddr2" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="ShipAddress" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="DisburseNo" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="RefundState" Type="smallint" Nullable="false" />
+          <Property Name="F2Rate" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="StoreServiceFeeRate" Type="decimal" Precision="6" Scale="4" Nullable="false" />
+          <Property Name="ExpressServiceFeeRate" Type="decimal" Precision="6" Scale="4" Nullable="false" />
+          <Property Name="PayerServiceFee" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="BankServiceFee" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="StoreServiceFee" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="ExpressServiceFee" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="StoreNetAmount" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="ReceivingPaperImage" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DeliveryAddress" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="DeliveryDateTime" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DeliveryNotifyTime" Type="datetime" />
+          <Property Name="Packages" Type="smallint" Nullable="false" />
+          <Property Name="IPAddress" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="SubStoreId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ttime" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="SsoRef" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Token" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="ReturnUrl" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="NotifyTime" Type="datetime" />
+          <Property Name="BankType" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="ClientAction" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="ClientDevice" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="ClientVersion" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="DeviceLocation" Type="varchar" MaxLength="24" Nullable="false" />
+          <Property Name="ExtractPaperImage" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SnapshotFile" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="rowid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChannelFee" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="BankRemark" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="IsAdvance" Type="bit" Nullable="false" />
+          <Property Name="BaseCurrency" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="DeviceId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AuthCode" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="ExtData" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="StoreTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CancelNo" Type="varchar" MaxLength="32" />
+          <Property Name="CancelTime" Type="datetime2" Precision="7" />
+          <Property Name="CancelFee" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="StoreOrderState" Type="smallint" Nullable="false" />
+          <Property Name="TNDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="StoreName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UBN" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="StoreKind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ApplyKind" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="BusinessName" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="BossName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="BossSid" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RegistAddress" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="BusinessAddress" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Tel" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Fax" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="WebSite" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="IPAddress" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="SalesContact" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="SalesTel" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SalesEmail" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="BillingContact" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="BillingTel" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="BillingEmail" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ServiceContact" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ServiceTel" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ServiceEmail" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="EMallId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="EMallName" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="ExpressId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="QueryUrl" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProductUrl" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="NotifyUrl" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="FtpUrl" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="FtpUserId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="FtpPassword" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="IsRedirect" Type="bit" Nullable="false" />
+          <Property Name="BankBranchNo" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="BankAccountNo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FeeRate" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="AnnualFee" Type="int" Nullable="false" />
+          <Property Name="IsNoFirstAnnualFee" Type="bit" Nullable="false" />
+          <Property Name="StartDate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DueDate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="State" Type="smallint" Nullable="false" />
+          <Property Name="StateDesc" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DeliveryAddress" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="StoreType" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Lastupdate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="EtaoState" Type="smallint" Nullable="false" />
+          <Property Name="EtaoDenyDesc" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SsoUrl" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="IsSynchroUpload" Type="bit" Nullable="false" />
+          <Property Name="rowid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentCycle" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="PaymentCycleDay" Type="int" Nullable="false" />
+          <Property Name="PaymentCycleWeek" Type="int" Nullable="false" />
+          <Property Name="BussinessTimeOpen" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="BussinessTimeClose" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="DeviceProvide" Type="int" Nullable="false" />
+          <Property Name="Manufacturers" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="TerminalQuantity" Type="int" Nullable="false" />
+          <Property Name="ConnectionLimit" Type="int" Nullable="false" />
+          <Property Name="TerminalCost" Type="int" Nullable="false" />
+          <Property Name="CashPledge" Type="int" Nullable="false" />
+          <Property Name="IsCashPledge" Type="bit" Nullable="false" />
+          <Property Name="RefundAccountNo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DeviceListType" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="sub_mch_id" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="DisburseReconType" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ExchangeRisk" Type="decimal" Precision="5" Scale="4" Nullable="false" />
+          <Property Name="IsLockIPAddress" Type="bit" Nullable="false" />
+          <Property Name="PublicKey" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <Association Name="FK_SaleOrder_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="SaleOrder" Type="Self.SaleOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="SaleOrder">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Store1" Type="Self.Store" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="Store1">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WECHATDBModelStoreContainer">
+          <EntitySet Name="SaleOrder" EntityType="Self.SaleOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_SaleOrder_Store" Association="Self.FK_SaleOrder_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="SaleOrder" EntitySet="SaleOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Store" Association="Self.FK_Store_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Store1" EntitySet="Store" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WECHATDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SaleOrder">
+          <Key>
+            <PropertyRef Name="OrderNo" />
+          </Key>
+          <Property Name="OrderNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderState" Type="Int16" Nullable="false" />
+          <Property Name="ResultCode" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StoreId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StoreRefNo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PayerId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SchemeId" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PayerRefNo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BuyerId" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BuyerName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustomerPhoneNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustomerPhoneNo2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustomerEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrderDesc" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ShipFree" Type="Boolean" Nullable="false" />
+          <Property Name="CustomerShipFee" Type="Int32" Nullable="false" />
+          <Property Name="SellerShipFee" Type="Int32" Nullable="false" />
+          <Property Name="SellerCurrency" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SellerAmount" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="ExchangeRisk" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="SBRate" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="BaseAmount" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="PayerCurrency" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BPRate" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="PayerAmount" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="PaymentTime" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SettleTime" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ShipState" Type="Int16" Nullable="false" />
+          <Property Name="ExpressId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ShipNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ShipKind" Type="Int16" Nullable="false" />
+          <Property Name="ReceiveTime1" Type="Boolean" Nullable="false" />
+          <Property Name="ReceiveTime2" Type="Boolean" Nullable="false" />
+          <Property Name="ReceiveTime3" Type="Boolean" Nullable="false" />
+          <Property Name="AreaCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AreaName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ShipAddr2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ShipAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DisburseNo" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RefundState" Type="Int16" Nullable="false" />
+          <Property Name="F2Rate" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="StoreServiceFeeRate" Type="Decimal" Precision="6" Scale="4" Nullable="false" />
+          <Property Name="ExpressServiceFeeRate" Type="Decimal" Precision="6" Scale="4" Nullable="false" />
+          <Property Name="PayerServiceFee" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="BankServiceFee" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="StoreServiceFee" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="ExpressServiceFee" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="StoreNetAmount" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="ReceivingPaperImage" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DeliveryAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DeliveryDateTime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DeliveryNotifyTime" Type="DateTime" Precision="3" />
+          <Property Name="Packages" Type="Int16" Nullable="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SubStoreId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ttime" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SsoRef" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Token" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ReturnUrl" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NotifyTime" Type="DateTime" Precision="3" />
+          <Property Name="BankType" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClientAction" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClientDevice" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClientVersion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DeviceLocation" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ExtractPaperImage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SnapshotFile" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rowid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChannelFee" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="BankRemark" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsAdvance" Type="Boolean" Nullable="false" />
+          <Property Name="BaseCurrency" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DeviceId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AuthCode" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ExtData" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StoreTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CancelNo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="CancelTime" Type="DateTime" Precision="7" />
+          <Property Name="CancelFee" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+          <Property Name="StoreOrderState" Type="Int16" Nullable="false" />
+          <Property Name="TNDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_SaleOrder_Store" FromRole="SaleOrder" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StoreName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UBN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StoreKind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ApplyKind" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BusinessName" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BossName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BossSid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegistAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BusinessAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WebSite" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SalesContact" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SalesTel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SalesEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BillingContact" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BillingTel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BillingEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ServiceContact" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ServiceTel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ServiceEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMallId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMallName" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ExpressId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QueryUrl" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductUrl" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NotifyUrl" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FtpUrl" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FtpUserId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FtpPassword" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsRedirect" Type="Boolean" Nullable="false" />
+          <Property Name="BankBranchNo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BankAccountNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FeeRate" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="AnnualFee" Type="Int32" Nullable="false" />
+          <Property Name="IsNoFirstAnnualFee" Type="Boolean" Nullable="false" />
+          <Property Name="StartDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DueDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="Int16" Nullable="false" />
+          <Property Name="StateDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DeliveryAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StoreType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lastupdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EtaoState" Type="Int16" Nullable="false" />
+          <Property Name="EtaoDenyDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SsoUrl" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsSynchroUpload" Type="Boolean" Nullable="false" />
+          <Property Name="rowid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentCycle" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PaymentCycleDay" Type="Int32" Nullable="false" />
+          <Property Name="PaymentCycleWeek" Type="Int32" Nullable="false" />
+          <Property Name="BussinessTimeOpen" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BussinessTimeClose" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DeviceProvide" Type="Int32" Nullable="false" />
+          <Property Name="Manufacturers" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TerminalQuantity" Type="Int32" Nullable="false" />
+          <Property Name="ConnectionLimit" Type="Int32" Nullable="false" />
+          <Property Name="TerminalCost" Type="Int32" Nullable="false" />
+          <Property Name="CashPledge" Type="Int32" Nullable="false" />
+          <Property Name="IsCashPledge" Type="Boolean" Nullable="false" />
+          <Property Name="RefundAccountNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DeviceListType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="sub_mch_id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DisburseReconType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ExchangeRisk" Type="Decimal" Precision="5" Scale="4" Nullable="false" />
+          <Property Name="IsLockIPAddress" Type="Boolean" Nullable="false" />
+          <Property Name="PublicKey" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SaleOrder" Relationship="Self.FK_SaleOrder_Store" FromRole="Store" ToRole="SaleOrder" />
+          <NavigationProperty Name="Store1" Relationship="Self.FK_Store_Store" FromRole="Store" ToRole="Store1" />
+          <NavigationProperty Name="Store2" Relationship="Self.FK_Store_Store" FromRole="Store1" ToRole="Store" />
+        </EntityType>
+        <Association Name="FK_SaleOrder_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="SaleOrder" Type="Self.SaleOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="SaleOrder">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Store1" Type="Self.Store" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="Store1">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WECHATDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SaleOrder" EntityType="Self.SaleOrder" />
+          <EntitySet Name="Store" EntityType="Self.Store" />
+          <AssociationSet Name="FK_SaleOrder_Store" Association="Self.FK_SaleOrder_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="SaleOrder" EntitySet="SaleOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Store" Association="Self.FK_Store_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Store1" EntitySet="Store" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WECHATDBModelStoreContainer" CdmEntityContainer="WECHATDBEntities">
+          <EntitySetMapping Name="SaleOrder">
+            <EntityTypeMapping TypeName="WECHATDBModel.SaleOrder">
+              <MappingFragment StoreEntitySet="SaleOrder">
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+                <ScalarProperty Name="ResultCode" ColumnName="ResultCode" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="StoreRefNo" ColumnName="StoreRefNo" />
+                <ScalarProperty Name="PayerId" ColumnName="PayerId" />
+                <ScalarProperty Name="SchemeId" ColumnName="SchemeId" />
+                <ScalarProperty Name="PayerRefNo" ColumnName="PayerRefNo" />
+                <ScalarProperty Name="BuyerId" ColumnName="BuyerId" />
+                <ScalarProperty Name="BuyerName" ColumnName="BuyerName" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerPhoneNo" ColumnName="CustomerPhoneNo" />
+                <ScalarProperty Name="CustomerPhoneNo2" ColumnName="CustomerPhoneNo2" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+                <ScalarProperty Name="OrderName" ColumnName="OrderName" />
+                <ScalarProperty Name="OrderDesc" ColumnName="OrderDesc" />
+                <ScalarProperty Name="ShipFree" ColumnName="ShipFree" />
+                <ScalarProperty Name="CustomerShipFee" ColumnName="CustomerShipFee" />
+                <ScalarProperty Name="SellerShipFee" ColumnName="SellerShipFee" />
+                <ScalarProperty Name="SellerCurrency" ColumnName="SellerCurrency" />
+                <ScalarProperty Name="SellerAmount" ColumnName="SellerAmount" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="ExchangeRisk" ColumnName="ExchangeRisk" />
+                <ScalarProperty Name="SBRate" ColumnName="SBRate" />
+                <ScalarProperty Name="BaseAmount" ColumnName="BaseAmount" />
+                <ScalarProperty Name="PayerCurrency" ColumnName="PayerCurrency" />
+                <ScalarProperty Name="BPRate" ColumnName="BPRate" />
+                <ScalarProperty Name="PayerAmount" ColumnName="PayerAmount" />
+                <ScalarProperty Name="PaymentTime" ColumnName="PaymentTime" />
+                <ScalarProperty Name="SettleTime" ColumnName="SettleTime" />
+                <ScalarProperty Name="ShipState" ColumnName="ShipState" />
+                <ScalarProperty Name="ExpressId" ColumnName="ExpressId" />
+                <ScalarProperty Name="ShipNo" ColumnName="ShipNo" />
+                <ScalarProperty Name="ShipKind" ColumnName="ShipKind" />
+                <ScalarProperty Name="ReceiveTime1" ColumnName="ReceiveTime1" />
+                <ScalarProperty Name="ReceiveTime2" ColumnName="ReceiveTime2" />
+                <ScalarProperty Name="ReceiveTime3" ColumnName="ReceiveTime3" />
+                <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="ShipAddr2" ColumnName="ShipAddr2" />
+                <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
+                <ScalarProperty Name="DisburseNo" ColumnName="DisburseNo" />
+                <ScalarProperty Name="RefundState" ColumnName="RefundState" />
+                <ScalarProperty Name="F2Rate" ColumnName="F2Rate" />
+                <ScalarProperty Name="StoreServiceFeeRate" ColumnName="StoreServiceFeeRate" />
+                <ScalarProperty Name="ExpressServiceFeeRate" ColumnName="ExpressServiceFeeRate" />
+                <ScalarProperty Name="PayerServiceFee" ColumnName="PayerServiceFee" />
+                <ScalarProperty Name="BankServiceFee" ColumnName="BankServiceFee" />
+                <ScalarProperty Name="StoreServiceFee" ColumnName="StoreServiceFee" />
+                <ScalarProperty Name="ExpressServiceFee" ColumnName="ExpressServiceFee" />
+                <ScalarProperty Name="StoreNetAmount" ColumnName="StoreNetAmount" />
+                <ScalarProperty Name="ReceivingPaperImage" ColumnName="ReceivingPaperImage" />
+                <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+                <ScalarProperty Name="DeliveryDateTime" ColumnName="DeliveryDateTime" />
+                <ScalarProperty Name="DeliveryNotifyTime" ColumnName="DeliveryNotifyTime" />
+                <ScalarProperty Name="Packages" ColumnName="Packages" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="SubStoreId" ColumnName="SubStoreId" />
+                <ScalarProperty Name="ttime" ColumnName="ttime" />
+                <ScalarProperty Name="SsoRef" ColumnName="SsoRef" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="ReturnUrl" ColumnName="ReturnUrl" />
+                <ScalarProperty Name="NotifyTime" ColumnName="NotifyTime" />
+                <ScalarProperty Name="BankType" ColumnName="BankType" />
+                <ScalarProperty Name="ClientAction" ColumnName="ClientAction" />
+                <ScalarProperty Name="ClientDevice" ColumnName="ClientDevice" />
+                <ScalarProperty Name="ClientVersion" ColumnName="ClientVersion" />
+                <ScalarProperty Name="DeviceLocation" ColumnName="DeviceLocation" />
+                <ScalarProperty Name="ExtractPaperImage" ColumnName="ExtractPaperImage" />
+                <ScalarProperty Name="SnapshotFile" ColumnName="SnapshotFile" />
+                <ScalarProperty Name="rowid" ColumnName="rowid" />
+                <ScalarProperty Name="ChannelFee" ColumnName="ChannelFee" />
+                <ScalarProperty Name="BankRemark" ColumnName="BankRemark" />
+                <ScalarProperty Name="IsAdvance" ColumnName="IsAdvance" />
+                <ScalarProperty Name="BaseCurrency" ColumnName="BaseCurrency" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="AuthCode" ColumnName="AuthCode" />
+                <ScalarProperty Name="ExtData" ColumnName="ExtData" />
+                <ScalarProperty Name="StoreTime" ColumnName="StoreTime" />
+                <ScalarProperty Name="CancelNo" ColumnName="CancelNo" />
+                <ScalarProperty Name="CancelTime" ColumnName="CancelTime" />
+                <ScalarProperty Name="CancelFee" ColumnName="CancelFee" />
+                <ScalarProperty Name="StoreOrderState" ColumnName="StoreOrderState" />
+                <ScalarProperty Name="TNDate" ColumnName="TNDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Store">
+            <EntityTypeMapping TypeName="WECHATDBModel.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+                <ScalarProperty Name="UBN" ColumnName="UBN" />
+                <ScalarProperty Name="StoreKind" ColumnName="StoreKind" />
+                <ScalarProperty Name="ApplyKind" ColumnName="ApplyKind" />
+                <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+                <ScalarProperty Name="BossName" ColumnName="BossName" />
+                <ScalarProperty Name="BossSid" ColumnName="BossSid" />
+                <ScalarProperty Name="RegistAddress" ColumnName="RegistAddress" />
+                <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="SalesContact" ColumnName="SalesContact" />
+                <ScalarProperty Name="SalesTel" ColumnName="SalesTel" />
+                <ScalarProperty Name="SalesEmail" ColumnName="SalesEmail" />
+                <ScalarProperty Name="BillingContact" ColumnName="BillingContact" />
+                <ScalarProperty Name="BillingTel" ColumnName="BillingTel" />
+                <ScalarProperty Name="BillingEmail" ColumnName="BillingEmail" />
+                <ScalarProperty Name="ServiceContact" ColumnName="ServiceContact" />
+                <ScalarProperty Name="ServiceTel" ColumnName="ServiceTel" />
+                <ScalarProperty Name="ServiceEmail" ColumnName="ServiceEmail" />
+                <ScalarProperty Name="EMallId" ColumnName="EMallId" />
+                <ScalarProperty Name="EMallName" ColumnName="EMallName" />
+                <ScalarProperty Name="ExpressId" ColumnName="ExpressId" />
+                <ScalarProperty Name="QueryUrl" ColumnName="QueryUrl" />
+                <ScalarProperty Name="ProductUrl" ColumnName="ProductUrl" />
+                <ScalarProperty Name="NotifyUrl" ColumnName="NotifyUrl" />
+                <ScalarProperty Name="FtpUrl" ColumnName="FtpUrl" />
+                <ScalarProperty Name="FtpUserId" ColumnName="FtpUserId" />
+                <ScalarProperty Name="FtpPassword" ColumnName="FtpPassword" />
+                <ScalarProperty Name="IsRedirect" ColumnName="IsRedirect" />
+                <ScalarProperty Name="BankBranchNo" ColumnName="BankBranchNo" />
+                <ScalarProperty Name="BankAccountNo" ColumnName="BankAccountNo" />
+                <ScalarProperty Name="FeeRate" ColumnName="FeeRate" />
+                <ScalarProperty Name="AnnualFee" ColumnName="AnnualFee" />
+                <ScalarProperty Name="IsNoFirstAnnualFee" ColumnName="IsNoFirstAnnualFee" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="StateDesc" ColumnName="StateDesc" />
+                <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+                <ScalarProperty Name="StoreType" ColumnName="StoreType" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="Lastupdate" ColumnName="Lastupdate" />
+                <ScalarProperty Name="UpdateUserId" ColumnName="UpdateUserId" />
+                <ScalarProperty Name="EtaoState" ColumnName="EtaoState" />
+                <ScalarProperty Name="EtaoDenyDesc" ColumnName="EtaoDenyDesc" />
+                <ScalarProperty Name="SsoUrl" ColumnName="SsoUrl" />
+                <ScalarProperty Name="IsSynchroUpload" ColumnName="IsSynchroUpload" />
+                <ScalarProperty Name="rowid" ColumnName="rowid" />
+                <ScalarProperty Name="PaymentCycle" ColumnName="PaymentCycle" />
+                <ScalarProperty Name="PaymentCycleDay" ColumnName="PaymentCycleDay" />
+                <ScalarProperty Name="PaymentCycleWeek" ColumnName="PaymentCycleWeek" />
+                <ScalarProperty Name="BussinessTimeOpen" ColumnName="BussinessTimeOpen" />
+                <ScalarProperty Name="BussinessTimeClose" ColumnName="BussinessTimeClose" />
+                <ScalarProperty Name="DeviceProvide" ColumnName="DeviceProvide" />
+                <ScalarProperty Name="Manufacturers" ColumnName="Manufacturers" />
+                <ScalarProperty Name="TerminalQuantity" ColumnName="TerminalQuantity" />
+                <ScalarProperty Name="ConnectionLimit" ColumnName="ConnectionLimit" />
+                <ScalarProperty Name="TerminalCost" ColumnName="TerminalCost" />
+                <ScalarProperty Name="CashPledge" ColumnName="CashPledge" />
+                <ScalarProperty Name="IsCashPledge" ColumnName="IsCashPledge" />
+                <ScalarProperty Name="RefundAccountNo" ColumnName="RefundAccountNo" />
+                <ScalarProperty Name="DeviceListType" ColumnName="DeviceListType" />
+                <ScalarProperty Name="sub_mch_id" ColumnName="sub_mch_id" />
+                <ScalarProperty Name="DisburseReconType" ColumnName="DisburseReconType" />
+                <ScalarProperty Name="ExchangeRisk" ColumnName="ExchangeRisk" />
+                <ScalarProperty Name="IsLockIPAddress" ColumnName="IsLockIPAddress" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

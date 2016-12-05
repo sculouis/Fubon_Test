@@ -1,0 +1,195 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model Fubon_Test.ViewModels.SaleOrderViewModel
+@using Fubon_Test.Bussiness
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqueryui")
+    <script type="text/javascript" src="~/Scripts/jquery.ui.datepicker-zh-TW.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.date-picker').datepicker({
+                dateFormat: "yy/mm/dd",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-60:+0"
+            });
+        });
+
+        //準備好每個頁次要連接的參數
+        $(function () {
+            $('.pagination>li>a[href]').each(function (i, item) {
+                var page = $(item).attr('href').replace('/SaleOrder?page=', '');
+                $(item).attr('href', '#').click(function () { postPage(page); });
+            });
+
+            var page = window.location.hash ? window.location.hash.slice(1) : 1;
+        });
+
+        //按下某頁次傳送到後端API
+        function postPage(page) {
+            var targetFormId = '#SaleOrderList';
+            if ($(targetFormId).size() > 0) {
+                $('<input>')
+                    .attr({ type: 'hidden', id: 'PageIndex', name: 'PageIndex', value: page })
+                    .appendTo($(targetFormId));
+                console.log(targetFormId);
+                $(targetFormId).submit();
+            }
+        };
+
+        function checkresult() {
+            //debugger;
+            var value = $('input:checkbox:checked[name="HeaderCheckbox"]').val();
+            console.log("checkresult:" + value);
+            if (value == 'on') {
+                $('input[name="checkboxs"]').each(function (i) {
+                    $(this).prop("checked", true);
+                    console.log(this.value);
+                });
+            } else {
+                $('input[name="checkboxs"]').each(function (i) {
+                    $(this).prop("checked", false);
+                    console.log(this.value);
+                });
+            }
+        }
+        function genPartialView() {
+            var url = '@Url.Action("PartialViewTest","SaleOrder")';
+            $.get(url, function (data) {
+            });
+        }
+
+    </script>
+}
+
+@using (Html.BeginForm("Index", "SaleOrder", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "SaleOrderList" }))
+{
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-addon">訂單起始日期</span>
+                @Html.TextBoxFor(x => x.SearchParameter.startDate, new { @class = "date-picker" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-addon">訂單結束日期</span>
+                @Html.TextBoxFor(x => x.SearchParameter.endDate, new { @class = "date-picker" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="radio">
+                @Html.RadioButtonFor(x => x.SearchParameter.refundState, 0)啟動
+            </div>
+            <div class="radio">
+                @Html.RadioButtonFor(x => x.SearchParameter.refundState, 1)關閉
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-addon">特店編號</span>
+                @Html.DropDownListFor(x => x.SearchParameter.storeId, Model.StoreSelectItem, "全部", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-addon">訂單狀態</span>
+                @Html.DropDownListFor(x => x.SearchParameter.orderState, Model.OrderStateSelectItem, "全部", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button type="submit" id="ButtonSubmit" class="btn btn-primary">
+                <span class="glyphicon glyphicon-search"></span> 查詢
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-group-lg">
+                @Html.CheckBoxFor(x => x.SearchParameter.checkState, true)通知
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="input-group-lg">
+                <input type="button" id="partialview" value="測試" onclick="genPartialView()" />
+            </div>
+            </div>
+        </div>
+
+        }
+
+        @Html.PagedListPager((IPagedList)Model.SaleOrders,
+        page => Url.Action("Index", new
+        {
+            page = page,
+        }),
+        PagedListRenderOptions.ClassicPlusFirstAndLast)
+
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    <input type="checkbox" name="HeaderCheckbox" id="HeaderCheckbox" onclick="checkresult()" />
+                </th>
+                <th>
+                    訂單編號
+                </th>
+                <th>
+                    訂單日期
+                </th>
+                <th>
+                    訂單金額
+                </th>
+                <th>
+                    手續費
+                </th>
+                <th>
+                    訂單狀態
+                </th>
+            </tr>
+
+            @foreach (var item in Model.SaleOrders)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" id="checkboxs" name="checkboxs" value="@item.OrderNo" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modeItem => item.OrderNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modeItem => item.OrderTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StoreServiceFee)
+                    </td>
+                    <td>
+                        @{
+                            //取得訂單狀態名稱
+                            var stateName = (OrderState)item.OrderState;
+                            @Html.DisplayFor(modeItem => stateName)
+                        }
+                    </td>
+
+                </tr>
+                            }
+        </table>
+
+
+

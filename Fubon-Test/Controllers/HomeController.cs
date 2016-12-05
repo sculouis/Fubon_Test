@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fubon_Test.Bussiness;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Fubon_Test.Controllers
 {
+
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -26,5 +28,7 @@ namespace Fubon_Test.Controllers
 
             return View();
         }
+
+
     }
 }
